@@ -156,6 +156,6 @@ class Auth
      */
     protected function ruleNeedsRole($rule)
     {
-        return $this->group->rules;
+        return $this->group->rules()->where('name', $rule)->find();
     }
 }
