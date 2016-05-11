@@ -14,8 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Tp5Tool\\Auth\\": "tools/auth/",
-            ""
+            "Tp5Tool\\Auth\\": "tools/auth/"
         }
     },
     "minimum-stability": "dev"
