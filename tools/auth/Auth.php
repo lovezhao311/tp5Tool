@@ -41,7 +41,8 @@ CREATE TABLE `rule` (
 `icon` varchar(100) DEFAULT NULL COMMENT '图标',
 `islink` tinyint(5) NOT NULL DEFAULT '0' COMMENT '是否菜单',
 `sort` int(3) NOT NULL DEFAULT '255' COMMENT '排序',
-PRIMARY KEY (`id`)
+PRIMARY KEY (`id`),
+UNIQUE KEY `rulename` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='权限&菜单表';
 ---- 数据示例
 ---- INSERT INTO `rule` (`id`, `parent_id`, `name`, `title`, `icon`, `islink`, `sort`) VALUES ('2', '0', 'index/main', '后台首页', 'glyphicon glyphicon-home', '1', '255');
