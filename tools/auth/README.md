@@ -1,0 +1,1 @@
+# thinkphp v5 auth
