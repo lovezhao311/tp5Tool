@@ -4,9 +4,7 @@
 
 Thinkphp v5 自己写的一些扩展类。
 
-
-[权限验证](https://github.com/lovezhao311/tp5Tool/blob/master/tools/auth/README.md)
-
++ [权限验证](https://github.com/lovezhao311/tp5Tool/blob/master/tools/auth/README.md)
 
 
 ## 使用 Composer 安装 tp5Tool
