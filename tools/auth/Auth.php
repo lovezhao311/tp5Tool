@@ -128,7 +128,7 @@ class Auth
                 }
             }
             // 不验证全部数据时，没有一个通过的情况
-            return false;
+            return ($requireAll == true) ? true : false;
         } else {
             return $this->ruleNeedsRole($rule);
         }
