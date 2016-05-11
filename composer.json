@@ -1,0 +1,22 @@
+{
+    "name": "luffyzhao/tp5tool",
+    "description": "thinkphp v5 tools",
+    "authors": [
+        {
+            "name": "LuffyZhao",
+            "email": "luffyzhao@vip.126.com"
+        }
+    ],
+    "license": "Apache-2.0",
+    "require": {
+        "php": ">=5.4.0",
+        "topthink/framework": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tp5Tool\\Auth\\": "tools/auth/",
+            ""
+        }
+    },
+    "minimum-stability": "dev"
+}
