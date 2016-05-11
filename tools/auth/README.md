@@ -32,21 +32,24 @@ return [
 
 ### 添加模型对应关系
 > 在 用户模型&&用户组模型&&权限模型 三个模型里 引入对应的 `Traits`
+>
 ~~~php
     use \Tp5Tool\Auth\Traits\AuthUser;
     use \Tp5Tool\Auth\Traits\AuthRule;
     use \Tp5Tool\Auth\Traits\AuthRole; 
 ~~~
 
-#示例
+###示例
 
-###用户是否有该权限
+>用户是否有该权限
+>
 ~~~php
     $user = \app\model\User::find(1);
     $viod = (new \Tp5Tool\Auth\Auth($user))->can(['index/index', 'index/main'], true);
 ~~~
 
-###用户组所有权限
+>用户组所有权限
+>
 ~~~php
     $role = \app\model\Role::find(1);
     $ruleRows = (new \Tp5Tool\Auth\Auth())->ruleByRole($role);
