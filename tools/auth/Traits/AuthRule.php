@@ -12,8 +12,8 @@ trait AuthRule
      * @dateTime 2016-04-21T16:27:30+0800
      * @return   [type]                   [description]
      */
-    public function rules()
+    public function roles()
     {
-        return $this->belongsToMany(Config::get('Tp5Tool.role'), Config::get('Tp5Tool.role_rule'));
+        return $this->belongsToMany(Config::get('tp5tool.role'), Config::get('tp5tool.role_rule'));
     }
 }

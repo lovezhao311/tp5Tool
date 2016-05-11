@@ -2,6 +2,8 @@
 
 namespace Tp5Tool\Auth\Traits;
 
+use \think\Config;
+
 trait AuthUser
 {
     /**
@@ -12,6 +14,6 @@ trait AuthUser
      */
     public function role()
     {
-        return $this->belongsTo(Config::get('Tp5Tool.user'));
+        return $this->belongsTo(Config::get('tp5tool.role'));
     }
 }

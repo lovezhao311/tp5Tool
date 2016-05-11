@@ -14,6 +14,6 @@ trait AuthRole
      */
     public function rules()
     {
-        return $this->belongsToMany(Config::get('Tp5Tool.rule'), Config::get('Tp5Tool.role_rule'));
+        return $this->belongsToMany(Config::get('tp5tool.rule'), Config::get('tp5tool.role_rule'));
     }
 }

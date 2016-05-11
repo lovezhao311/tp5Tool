@@ -5,8 +5,9 @@
  * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
  * Author: LufyyZhao <LufyyZhao@vip.126.com>
  */
-namespace LuffyZhao\Tp5Auth;
+namespace Tp5Tool\Auth;
 
+use \Exception;
 use \think\Config;
 use \think\Db;
 
@@ -89,8 +90,8 @@ class Auth
      */
     public function __construct($user = null)
     {
-        if (Config::has('Tp5Tool')) {
-            throw new Exception("找不到配置文件 Tp5Tool ");
+        if (!Config::has('tp5tool')) {
+            throw new Exception("找不到配置文件 tp5tool ");
         }
 
         if ($user != null) {
@@ -110,10 +111,6 @@ class Auth
     public function can($rule, $requireAll = false)
     {
         if ($this->group->status == 0) {
-            return false;
-        }
-
-        if (!$roleModel) {
             return false;
         }
 
@@ -159,6 +156,6 @@ class Auth
      */
     protected function ruleNeedsRole($rule)
     {
-        return $this->group->rules()->where('name', $rule)->find();
+        return $this->group->rules;
     }
 }
