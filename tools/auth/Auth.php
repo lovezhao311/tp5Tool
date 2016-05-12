@@ -157,6 +157,22 @@ class Auth
      */
     protected function ruleNeedsRole($rule)
     {
-        return $this->group->rules()->where('name', $rule)->find();
+
+        $table = Config::get('tp5tool.role_rule');
+        $model = Config::get('tp5tool.rule');
+        $group = Config::get('tp5tool.role');
+
+        $modelTableInfo = $model::getTableInfo();
+
+        $tableName  = $model::getTable();
+        $relationFk = $modelTableInfo['pk'];
+
+        $localKey = $group::getTable() . '_id';
+
+        return $model::field($tableName . '.*')
+            ->field(true, false, $table, 'pivot', 'pivot__')
+            ->join($table . ' pivot', 'pivot.' . $tableName . '_id' . '=' . $tableName . '.' . $relationFk)
+            ->where('name', $rule)
+            ->where('pivot.' . $localKey, $this->group->id)->find();
     }
 }
